@@ -1,1 +1,4 @@
-console.log("quiz");
+let startQuizPage = () => {
+    console.log("quiz");
+}
+
