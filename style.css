@@ -15,8 +15,9 @@ html, body {
     transform: rotate(29.67deg);
 }
 
-.home-left:hover{
+.home-left-hover{
     background: linear-gradient(133.8deg, #C53DE7 15.22%, #670E7D 90.86%);
+    cursor: pointer;
 }
 
 .home-right{
@@ -29,8 +30,9 @@ html, body {
     transform: rotate(29.67deg);
 }
 
-.home-right:hover{
+.home-right-hover{
     background: linear-gradient(223.88deg, #920069 5.86%, #E800A7 88.68%);
+    cursor: pointer;
 }
 
 .home-left-img{
@@ -40,9 +42,10 @@ html, body {
     top: 23%;
 }
 
-.home-left-img:hover{
+.home-left-img-hover{
     height: 45%;
     left: 11%;
+    cursor: pointer;
 }
 
 .home-left-text{
@@ -54,9 +57,10 @@ html, body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.home-left-text:hover{
+.home-left-text-hover{
     top: 69.5%;
     font-size: 395%;
+    cursor: pointer;
 }
 
 .home-right-img{
@@ -66,9 +70,10 @@ html, body {
     top: 23%;
 }
 
-.home-right-img:hover{
+.home-right-img-hover{
     height: 45%;
     right: 13%;
+    cursor: pointer;
 }
 
 .home-right-text{
@@ -80,7 +85,8 @@ html, body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.home-right-text:hover{
+.home-right-text-hover{
     top: 69.5%;
     font-size: 395%;
+    cursor: pointer;
 }

@@ -1,1 +1,5 @@
-console.log("leaderboard");
+
+
+let startLeaderboardPage = () => {
+    console.log("leaderboard");
+}
