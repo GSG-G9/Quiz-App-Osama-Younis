@@ -1,0 +1,86 @@
+html, body {
+    margin: 0; 
+    height: 100%;
+    overflow:hidden;
+    font-family: Poppins;
+}
+
+.home-left{
+    position: absolute;
+    width: 59%;
+    height: 153%;
+    left: -9%;
+    top: -39%;
+    background: linear-gradient(133.8deg, #A924CB 15.22%, #74138C 90.86%);
+    transform: rotate(29.67deg);
+}
+
+.home-left:hover{
+    background: linear-gradient(133.8deg, #C53DE7 15.22%, #670E7D 90.86%);
+}
+
+.home-right{
+    position: absolute;
+    width: 58.3%;
+    height: 198%;
+    left: 47.6%;
+    top: -23%;
+    background: linear-gradient(223.88deg, #E800A7 5.86%, #920069 88.68%);
+    transform: rotate(29.67deg);
+}
+
+.home-right:hover{
+    background: linear-gradient(223.88deg, #920069 5.86%, #E800A7 88.68%);
+}
+
+.home-left-img{
+    position: absolute;
+    height: 41%;
+    left: 13%;
+    top: 23%;
+}
+
+.home-left-img:hover{
+    height: 45%;
+    left: 11%;
+}
+
+.home-left-text{
+    position: absolute;
+    left: 15%;
+    top: 70%;
+    font-size: 382%;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.home-left-text:hover{
+    top: 69.5%;
+    font-size: 395%;
+}
+
+.home-right-img{
+    position: absolute;
+    height: 41%;
+    right: 13%;
+    top: 23%;
+}
+
+.home-right-img:hover{
+    height: 45%;
+    right: 13%;
+}
+
+.home-right-text{
+    position: absolute;
+    right: 13.5%;
+    top: 70%;
+    font-size: 382%;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.home-right-text:hover{
+    top: 69.5%;
+    font-size: 395%;
+}
