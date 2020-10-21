@@ -194,6 +194,8 @@ html, body {
     line-height: 198%;
     color: #E3B6DF;
     text-align: center;
+
+    cursor: pointer;
 }
 
 #answers1:hover{
@@ -214,6 +216,8 @@ html, body {
     color: #E3B6DF;
     text-align: center;
 
+
+    cursor: pointer;
 }
 
 #answers2:hover{
@@ -233,6 +237,8 @@ html, body {
     line-height: 198%;
     color: #E3B6DF;
     text-align: center;
+
+    cursor: pointer;
 }
 
 #answers3:hover{
@@ -252,6 +258,8 @@ html, body {
     line-height: 198%;
     color: #E3B6DF;
     text-align: center;
+
+    cursor: pointer;
 }
 
 #answers4:hover{
@@ -273,6 +281,7 @@ html, body {
     color: #E800A7;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 #quizTimer{
     position: absolute;
     right: 5%;
@@ -280,4 +289,57 @@ html, body {
     font-weight: bold;
     font-size: 40px;
     color: #FFC9FA;
+}
+
+.img1{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 39%;
+}
+
+.img2{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 46.5%;
+}
+
+.img3{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 54%;
+}
+
+.img4{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 61.5%;
+}
+
+.right{
+    color: #9BF39F !important;
+    background: #8C14AA !important;
+}
+
+.false{
+    color: #E94B4B !important;
+}
+
+._670F7D:hover{
+
+    background: #670F7D !important;
+}
+.cursorDefault{
+    cursor: default !important;
+}
+#nextBtn2:hover{
+    background: #E800A7;
+    color: #670F7D;
+}
+
+.displayNall{
+    display: none;
 }
