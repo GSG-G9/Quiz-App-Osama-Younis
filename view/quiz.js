@@ -37,7 +37,42 @@ let createInsrtPage = (mainDiv, quizTitleTxt, insrtPointTxt, questionList, quizS
     nextBtn.style.cursor = "pointer"
     quiz.appendChild(nextBtn)
 
-    nextBtn.addEventListener("click", () => createquiztionPage (questionList, quizSetting, QuestionNo))
+    nextBtn.addEventListener("click", () => createInputPage (quizTitleTxt,questionList, quizSetting, QuestionNo))
+}
+
+// create  page for get the user name
+let createInputPage = (quizTitleTxt,questionList, quizSetting, QuestionNo) =>{
+    quiz.innerHTML=""
+
+    let quizTitle2 = document.createElement("div")
+    quizTitle2.id ="quiz-title2"
+    quizTitle2.innerText = quizTitleTxt
+    quiz.appendChild(quizTitle2)
+
+    let nameinput = document.createElement("input")
+    nameinput.id ="nameinput"
+    nameinput.placeholder = "Enter your name"
+    quiz.appendChild(nameinput)
+    nameinput.autocapitalize="off" 
+    nameinput.autocomplete="off" 
+
+    let nextBtn = document.createElement("div")
+    nextBtn.id ="nextBtn"
+    nextBtn.innerText = `Start`
+    nextBtn.style.cursor="pointer"
+    quiz.appendChild(nextBtn)
+
+    nextBtn.addEventListener("click", () => {
+        if(nameinput.value){
+            user.name = nameinput.value.trim()
+            createquiztionPage (questionList, quizSetting, QuestionNo)
+        }else{
+            console.error("plz, enter your name");
+        }
+    })
+
+
+    
 }
 
 // create Quiztion Page by No. of Quiztion
@@ -207,13 +242,14 @@ let getUserScore = () => {
 }
 
 // clear The Question Page
-let clearTheQuestionPage = () => {{
+let clearTheQuestionPage = () => {
     quiz.innerHTML=""
     isChosed =false
-}}
+}
 
 //create score page 
 let createScorePage = () => {
+
     // clear the Page
     quiz.innerHTML=""
 
@@ -246,11 +282,20 @@ let createScorePage = () => {
     //got to home page
     goHomeBtn.addEventListener("click", () => location.reload())
 
+    //add the user data for users list data
+    setUsersData(user)
+
 }
 
 // START the quiz page
 let startQuizPage = (insrtTitTxt, insrtPointTxt, questionList, quizSetting) => {
     main.innerHTML=""
+
+    let logo =document.createElement("img")
+    logo.id ="logo"
+    logo.src ="./resources/logo/logo_placeholder_sm.png"
+    logo.alt = "logo" 
+    main.appendChild(logo)
 
     // create the main div call quiz
     let quiz =document.createElement("div")

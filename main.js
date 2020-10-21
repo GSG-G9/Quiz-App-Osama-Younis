@@ -75,9 +75,29 @@ let questionList ={
 }
 
 let quizSetting = {
-        questionTimeBySecond: 20,
-        questionNo: 5
+    questionTimeBySecond: 20,
+    questionNo: 11
 }
+
+let usersData =[]
+let getUsersData = () =>{
+    if(window.localStorage.getItem('usersData') == null){
+        window.localStorage.setItem('usersData', JSON.stringify(usersData));
+        // console.log(sssss);
+        return
+    }
+    usersData = JSON.parse(window.localStorage.getItem('usersData'));
+}
+getUsersData()
+
+let setUsersData = (user) =>{
+    if(!user)
+        return
+    console.log(user);
+    usersData.push(user)
+    window.localStorage.setItem('usersData', JSON.stringify(usersData));
+}
+
 
 
 // //Transfer from the home to Quiz Page

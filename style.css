@@ -412,3 +412,46 @@ html, body {
     background: linear-gradient(133.8deg, #f36abc 29.4%, #f7d47d 90.86%);
     color: #fdd5f9;
 }
+
+#nameinput{
+    position: absolute;
+    width: 28%;
+    height: 8%;
+    left: 35%;
+    top: 43%;
+    background: #FFFFFF;
+    border: 3px solid #FF03E6;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 197%;
+    line-height: 216%;
+    color: #e471d8;
+    text-align: center;
+}
+
+#nameinput:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+#nameinput::placeholder { 
+    color: #D37FCB;
+}
+
+#quiz-title2{
+    position: absolute;
+    left: 42%;
+    top: 26%;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 144px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#logo{
+    position: absolute;
+    width: 8%;
+    left: 5%;
+    top: 2%;
+}
