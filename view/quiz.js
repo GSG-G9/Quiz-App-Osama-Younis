@@ -180,7 +180,7 @@ let startquizTimer = (quizTimer ,questionTimeBySecond) => {
 
     let seconds = questionTimeBySecond 
 
-    var x = setInterval(function() { 
+    let x = setInterval(function() { 
         seconds = seconds-1
         quizTimer.innerText = (seconds < 10)? `00:0${seconds}` : `00:${seconds}`  
         if (seconds < 0 || isChosed) { 
@@ -238,7 +238,7 @@ let getUserScore = () => {
     user.arratOfUserAnswers.forEach(function(x) {
         result[x.isRigth] = (result[x.isRigth] || 0) + 1;
     });
-    user.Score = (result[true]/user.arratOfUserAnswers.length)*100
+    user.Score = ((result[true]/user.arratOfUserAnswers.length)*100).toLocaleString( undefined,{ minimumFractionDigits: 1 } )
 }
 
 // clear The Question Page

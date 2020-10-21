@@ -76,10 +76,11 @@ let questionList ={
 
 let quizSetting = {
     questionTimeBySecond: 20,
-    questionNo: 11
+    questionNo: 5
 }
 
 let usersData =[]
+
 let getUsersData = () =>{
     if(window.localStorage.getItem('usersData') == null){
         window.localStorage.setItem('usersData', JSON.stringify(usersData));
@@ -106,6 +107,6 @@ homeLeftImg.addEventListener("click",() =>  startQuizPage(insrtTitTxt, insrtPoin
 homeLeftTxt.addEventListener("click",() =>  startQuizPage(insrtTitTxt, insrtPointTxt, questionList, quizSetting));
 
 //Transfer from the home to Leaderboard Page
-homeRight.addEventListener("click", startLeaderboardPage);
-homeRightImg.addEventListener("click", startLeaderboardPage);
-homeRightTxt.addEventListener("click", startLeaderboardPage);
+homeRight.addEventListener("click", () =>startLeaderboardPage(usersData));
+homeRightImg.addEventListener("click", () =>startLeaderboardPage(usersData));
+homeRightTxt.addEventListener("click", () =>startLeaderboardPage(usersData));
