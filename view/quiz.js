@@ -1,9 +1,13 @@
 let main = document.querySelector("#main")
 let QuestionNo = 0
 let isChosed =false
-const questionListbyNo = {}
 let arratOfAnswersElement = []
-let arratOfUserAnswers = []
+let user = {
+    name:"",
+    questionListbyNo:[],
+    arratOfUserAnswers:[],
+    Score: 0
+}
 
 // create Instructions page
 let createInsrtPage = (mainDiv, quizTitleTxt, insrtPointTxt, questionList, quizSetting) => {
@@ -24,7 +28,7 @@ let createInsrtPage = (mainDiv, quizTitleTxt, insrtPointTxt, questionList, quizS
     let insrtPoint =document.createElement("div")
     insrtPoint.classList.add("insrtPoint")
     insrtPoint.innerText = insrtPointTxt
-            
+   
     maintxt.appendChild(insrtPoint)
 
     let nextBtn =document.createElement("div")
@@ -34,7 +38,6 @@ let createInsrtPage = (mainDiv, quizTitleTxt, insrtPointTxt, questionList, quizS
     quiz.appendChild(nextBtn)
 
     nextBtn.addEventListener("click", () => createquiztionPage (questionList, quizSetting, QuestionNo))
-    
 }
 
 // create Quiztion Page by No. of Quiztion
@@ -44,7 +47,7 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
     console.log(questionNo);
     if(questionNo == 0){
         getQuestionListbyNo(questionList, quizSetting.questionNo)
-        console.log(questionListbyNo)
+        console.log(user.questionListbyNo)
     }
 
     // clear Instructions page
@@ -72,10 +75,10 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
             break
         case 3:
             quizNoTxt ="3'rd"
-            break;
+            break
         default:
             quizNoTxt = questionNo+1 + "'th"
-            break;
+            break
     }
     quizNoTxt+=" Question"
     // display it  
@@ -84,9 +87,9 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
     //setup the question
     let quizTxt =document.createElement("h1")
     quizTxt.id = "quizTxt"
-    quiz.appendChild(quizTxt);
-    console.log("ASDASD  "+questionNo);
-    quizTxt.innerText = questionListbyNo[questionNo].question
+    quiz.appendChild(quizTxt)
+    console.log("ASDASD  "+questionNo)
+    quizTxt.innerText = user.questionListbyNo[questionNo].question
 
     arratOfAnswersElement = []
     // create answer faild and fill it
@@ -95,7 +98,7 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
         answer = arratOfAnswersElement[i]
         answer.id = `answers${i+1}`
         quiz.appendChild(answer);
-        answer.innerText = questionListbyNo[questionNo].answers[i]
+        answer.innerText = user.questionListbyNo[questionNo].answers[i]
         answer.addEventListener("click", (e) => {
             if(!isChosed){
                 isChosed=true
@@ -115,14 +118,9 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
         if(questionNo != quizSetting.questionNo-1){
             createquiztionPage(questionList, quizSetting, questionNo+1)
         }else{
-            console.log(arratOfUserAnswers);
-            console.log("Score page");
+            createScorePage()
         }
-            
-        
     })
-    
-    console.log("createquiztionPage");
 } 
 
 // get list of question by the No. that needed
@@ -132,11 +130,10 @@ let getQuestionListbyNo = (questionList, questionNo) =>{
     let arrayOfNoChosenQuestion = []
 
     for (let i = 0; i < questionNo; i++) {
-        let x = Math.floor(Math.random() * questionListLength);
-        console.log(x);
+        let x = Math.floor(Math.random() * questionListLength)
         if(arrayOfNoChosenQuestion.indexOf(x) == -1){
             arrayOfNoChosenQuestion.push(x)
-            questionListbyNo[i]=questionList[x]
+            user.questionListbyNo[i]=questionList[x]
         }else{
             i=i-1
         }
@@ -167,14 +164,14 @@ let doWhenQuestionDone = (numberOfChosenAnswers) => {
         isRigth: false
     }
     if(numberOfChosenAnswers){
-        if(numberOfChosenAnswers == questionListbyNo[QuestionNo].rightAnswerNo){
+        if(numberOfChosenAnswers == user.questionListbyNo[QuestionNo].rightAnswerNo){
             theAnswer.isRigth=true
         }
         theAnswer.theAnswerNo = numberOfChosenAnswers
     }
     displayTheRightAnswer()
 
-    arratOfUserAnswers.push(theAnswer) 
+    user.arratOfUserAnswers.push(theAnswer) 
 }
 
 // displayTheRightAnswer
@@ -184,8 +181,8 @@ let displayTheRightAnswer = () =>{
         temp.push(document.createElement("img"))
         img = temp[i]
         img.classList.add( `img${i+1}`)
-        document.querySelector("#quiz").appendChild(img);
-        if(i+1 == questionListbyNo[QuestionNo].rightAnswerNo){
+        document.querySelector("#quiz").appendChild(img)
+        if(i+1 == user.questionListbyNo[QuestionNo].rightAnswerNo){
             img.src="./resources/quiz/right.svg"
             arratOfAnswersElement[i].classList.add("right")
             arratOfAnswersElement[i].classList.add("cursorDefault")
@@ -200,11 +197,56 @@ let displayTheRightAnswer = () =>{
     nextBtn2.classList.remove("displayNall")
 }
 
+// calculate the usser score
+let getUserScore = () => {
+    var result = {};
+    user.arratOfUserAnswers.forEach(function(x) {
+        result[x.isRigth] = (result[x.isRigth] || 0) + 1;
+    });
+    user.Score = (result[true]/user.arratOfUserAnswers.length)*100
+}
+
 // clear The Question Page
 let clearTheQuestionPage = () => {{
     quiz.innerHTML=""
     isChosed =false
 }}
+
+//create score page 
+let createScorePage = () => {
+    // clear the Page
+    quiz.innerHTML=""
+
+    //get the uer score
+    getUserScore()
+
+    //Create the Elements
+    let yourScore = document.createElement("h1")
+    yourScore.id = "yourScore"
+    yourScore.innerText = "Your Score :"
+    quiz.appendChild(yourScore)
+
+    let yourScoreRe = document.createElement("h1")
+    yourScoreRe.id = "yourScoreRe"
+    yourScoreRe.innerText = `${user.Score}%`
+    quiz.appendChild(yourScoreRe)
+
+
+    let gotLDpage = document.createElement("div")
+    gotLDpage.id= "gotLDpage"
+    gotLDpage.innerText = "Leaderboard"
+    quiz.appendChild(gotLDpage)
+    // go to Leaderboard page
+    gotLDpage.addEventListener("click", () => startLeaderboardPage)
+    
+    let goHomeBtn = document.createElement("div")
+    goHomeBtn.id= "goHomeBtn"
+    goHomeBtn.innerText = "Home"
+    quiz.appendChild(goHomeBtn)
+    //got to home page
+    goHomeBtn.addEventListener("click", () => location.reload())
+
+}
 
 // START the quiz page
 let startQuizPage = (insrtTitTxt, insrtPointTxt, questionList, quizSetting) => {

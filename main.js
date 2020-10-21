@@ -76,8 +76,9 @@ let questionList ={
 
 let quizSetting = {
         questionTimeBySecond: 20,
-        questionNo: 10
+        questionNo: 5
 }
+
 
 // //Transfer from the home to Quiz Page
 homeLeft.addEventListener("click",() => startQuizPage(insrtTitTxt, insrtPointTxt, questionList, quizSetting))
