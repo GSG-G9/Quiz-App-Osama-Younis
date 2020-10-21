@@ -155,3 +155,129 @@ html, body {
     background: #E800A7;
     color: #670F7D;
 }
+
+#quiz-No{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 12%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#quizTxt{
+    position: absolute;
+    width: 50%;
+    top: 23%;
+    text-align: center;
+    font-size: 34px;
+    color: #FEC8F9;
+    margin: 0px 25%;
+}
+
+#answers1{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 38%;
+    background: #670F7D;
+    border-radius: 10px;
+    margin: 0 32.5%;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+}
+
+#answers1:hover{
+    background: #8C14AA;
+}
+
+#answers2{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 45.5%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+
+}
+
+#answers2:hover{
+    background: #8C14AA;
+}
+
+#answers3{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 53%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+}
+
+#answers3:hover{
+    background: #8C14AA;
+}
+
+#answers4{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 60.5%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+}
+
+#answers4:hover{
+    background: #8C14AA;
+}
+
+#nextBtn2{
+    position: absolute;
+    width: 8%;
+    height: 6%;
+    left: 64.8%;
+    top: 73%;
+    background: #670F7D;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 192%;
+    line-height: 60px;
+    text-align: center;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#quizTimer{
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    font-weight: bold;
+    font-size: 40px;
+    color: #FFC9FA;
+}
