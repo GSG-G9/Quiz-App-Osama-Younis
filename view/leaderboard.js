@@ -63,9 +63,15 @@ let startLeaderboardPage = (usersData) => {
         }
         
     }
+    
+    let LDToHomeBtn = document.createElement("div")
+    LDToHomeBtn.id = "LDToHomeBtn"
+    LDToHomeBtn.innerText = "Home"
+    LDToHomeBtn.style.cursor="pointer"
+    leaderboard.appendChild(LDToHomeBtn)
+    
+    LDToHomeBtn.addEventListener("click", () => location.reload())
 
-    // create Instructions page
-    console.log("leaderboard");
 }
 
 let gettopTenUser = (usersData) => {

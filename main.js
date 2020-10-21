@@ -84,7 +84,6 @@ let usersData =[]
 let getUsersData = () =>{
     if(window.localStorage.getItem('usersData') == null){
         window.localStorage.setItem('usersData', JSON.stringify(usersData));
-        // console.log(sssss);
         return
     }
     usersData = JSON.parse(window.localStorage.getItem('usersData'));
@@ -94,7 +93,6 @@ getUsersData()
 let setUsersData = (user) =>{
     if(!user)
         return
-    console.log(user);
     usersData.push(user)
     window.localStorage.setItem('usersData', JSON.stringify(usersData));
 }
@@ -107,6 +105,6 @@ homeLeftImg.addEventListener("click",() =>  startQuizPage(insrtTitTxt, insrtPoin
 homeLeftTxt.addEventListener("click",() =>  startQuizPage(insrtTitTxt, insrtPointTxt, questionList, quizSetting));
 
 //Transfer from the home to Leaderboard Page
-homeRight.addEventListener("click", () =>startLeaderboardPage(usersData));
-homeRightImg.addEventListener("click", () =>startLeaderboardPage(usersData));
-homeRightTxt.addEventListener("click", () =>startLeaderboardPage(usersData));
+homeRight.addEventListener("click", () => startLeaderboardPage(usersData));
+homeRightImg.addEventListener("click", () => startLeaderboardPage(usersData));
+homeRightTxt.addEventListener("click", () => startLeaderboardPage(usersData));
