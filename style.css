@@ -90,3 +90,368 @@ html, body {
     font-size: 395%;
     cursor: pointer;
 }
+
+#quiz{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(33.59deg, #9948FF 9.23%, #7B045A 85.93%);
+}
+
+.maintxt{
+    width: 20%;
+    
+    position: absolute;
+    padding:10%  ;
+}
+
+#quiz-title{
+    position: absolute;
+    width: 38%;
+    left: 105%;
+    top: 46%;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 144px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.insrtTit{
+    position: absolute;
+    left: 77%;
+    top: 82%;
+    font-size: 40px;
+    color: #FFC9FA;
+}
+
+.insrtPoint{
+    position: absolute;
+    width: 100%;
+    left: 77%;
+    top: 107%;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 37px;
+    color: #F68FEC;
+}
+
+#nextBtn{
+    position: absolute;
+    width: 8%;
+    height: 6%;
+    left: 58.8%;
+    top: 57%;
+    background: #670F7D;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 192%;
+    line-height: 60px;
+    text-align: center;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#nextBtn:active{
+
+    background: #E800A7;
+    color: #670F7D;
+}
+
+#quiz-No{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 12%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#quizTxt{
+    position: absolute;
+    width: 50%;
+    top: 23%;
+    text-align: center;
+    font-size: 34px;
+    color: #FEC8F9;
+    margin: 0px 25%;
+}
+
+#answers1{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 38%;
+    background: #670F7D;
+    border-radius: 10px;
+    margin: 0 32.5%;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#answers1:hover{
+    background: #8C14AA;
+}
+
+#answers2{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 45.5%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+
+
+    cursor: pointer;
+}
+
+#answers2:hover{
+    background: #8C14AA;
+}
+
+#answers3{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 53%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#answers3:hover{
+    background: #8C14AA;
+}
+
+#answers4{
+    position: absolute;
+    width: 35%;
+    height: 5.32%;
+    top: 60.5%;
+    margin: 0 32.5%;
+    background: #670F7D;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 10px;
+    line-height: 198%;
+    color: #E3B6DF;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+#answers4:hover{
+    background: #8C14AA;
+}
+
+#nextBtn2{
+    position: absolute;
+    width: 8%;
+    height: 6%;
+    left: 64.8%;
+    top: 73%;
+    background: #670F7D;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 192%;
+    line-height: 60px;
+    text-align: center;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+#quizTimer{
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    font-weight: bold;
+    font-size: 40px;
+    color: #FFC9FA;
+}
+
+.img1{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 39%;
+}
+
+.img2{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 46.5%;
+}
+
+.img3{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 54%;
+}
+
+.img4{
+    position: absolute;
+    width: 30px;
+    left: 64%;
+    top: 61.5%;
+}
+
+.right{
+    color: #9BF39F !important;
+    background: #8C14AA !important;
+}
+
+.false{
+    color: #E94B4B !important;
+}
+
+._670F7D:hover{
+
+    background: #670F7D !important;
+}
+.cursorDefault{
+    cursor: default !important;
+}
+#nextBtn2:hover{
+    background: #E800A7;
+    color: #670F7D;
+}
+
+.displayNall{
+    display: none;
+}
+
+#yourScore{
+    position: absolute;
+    left: 38.5%;
+    top: 17%;
+    font-size: 70px;
+    line-height: 105px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#yourScoreRe{
+    position: absolute;
+    left: 46%;
+    top: 33%;
+    font-size: 70px;
+    line-height: 105px;
+    color: #FFC9FA;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#gotLDpage{
+    position: absolute;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 200%;
+    text-align: center;
+    color: #FFC670;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 18%;
+    height: 9%;
+    left: 47%;
+    top: 61%;
+    background: linear-gradient(223.88deg, #E800A7 5.86%, #920069 88.68%);
+    border-radius: 40px 0px;
+
+    cursor: pointer;
+}
+
+#gotLDpage:hover{
+    background: linear-gradient(223.88deg, #f565cc 5.86%, #a50b79 88.68%);
+    color: #f7cc8c;
+}
+
+#goHomeBtn{
+    position: absolute;
+    width: 11%;
+    height: 9%;
+    left: 36%;
+    top: 70%;
+    background: linear-gradient(133.8deg, #F35AB6 29.4%, #FFD15C 90.86%);
+    border-radius: 40px 0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 190%;
+    text-align: center;
+    color: #FFC9FA;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+#goHomeBtn:hover{
+    background: linear-gradient(133.8deg, #f36abc 29.4%, #f7d47d 90.86%);
+    color: #fdd5f9;
+}
+
+#nameinput{
+    position: absolute;
+    width: 28%;
+    height: 8%;
+    left: 35%;
+    top: 43%;
+    background: #FFFFFF;
+    border: 3px solid #FF03E6;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 197%;
+    line-height: 216%;
+    color: #e471d8;
+    text-align: center;
+}
+
+#nameinput:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+#nameinput::placeholder { 
+    color: #D37FCB;
+}
+
+#quiz-title2{
+    position: absolute;
+    left: 42%;
+    top: 26%;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 144px;
+    color: #E800A7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#logo{
+    position: absolute;
+    width: 8%;
+    left: 5%;
+    top: 2%;
+}
