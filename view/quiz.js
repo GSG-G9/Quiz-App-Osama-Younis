@@ -78,11 +78,8 @@ let createInputPage = (quizTitleTxt,questionList, quizSetting, QuestionNo) =>{
 // create Quiztion Page by No. of Quiztion
 let createquiztionPage = (questionList, quizSetting, questionNo) =>{
     QuestionNo = questionNo
-    console.log ("questionNo "+questionNo)
-    console.log(questionNo);
     if(questionNo == 0){
         getQuestionListbyNo(questionList, quizSetting.questionNo)
-        console.log(user.questionListbyNo)
     }
 
     // clear Instructions page
@@ -123,7 +120,6 @@ let createquiztionPage = (questionList, quizSetting, questionNo) =>{
     let quizTxt =document.createElement("h1")
     quizTxt.id = "quizTxt"
     quiz.appendChild(quizTxt)
-    console.log("ASDASD  "+questionNo)
     quizTxt.innerText = user.questionListbyNo[questionNo].question
 
     arratOfAnswersElement = []
@@ -180,7 +176,7 @@ let startquizTimer = (quizTimer ,questionTimeBySecond) => {
 
     let seconds = questionTimeBySecond 
 
-    var x = setInterval(function() { 
+    let x = setInterval(function() { 
         seconds = seconds-1
         quizTimer.innerText = (seconds < 10)? `00:0${seconds}` : `00:${seconds}`  
         if (seconds < 0 || isChosed) { 
@@ -238,7 +234,7 @@ let getUserScore = () => {
     user.arratOfUserAnswers.forEach(function(x) {
         result[x.isRigth] = (result[x.isRigth] || 0) + 1;
     });
-    user.Score = (result[true]/user.arratOfUserAnswers.length)*100
+    user.Score = ((result[true]/user.arratOfUserAnswers.length)*100).toLocaleString( undefined,{ minimumFractionDigits: 1 } )
 }
 
 // clear The Question Page
@@ -273,7 +269,7 @@ let createScorePage = () => {
     gotLDpage.innerText = "Leaderboard"
     quiz.appendChild(gotLDpage)
     // go to Leaderboard page
-    gotLDpage.addEventListener("click", () => startLeaderboardPage)
+    gotLDpage.addEventListener("click", () => startLeaderboardPage(usersData))
     
     let goHomeBtn = document.createElement("div")
     goHomeBtn.id= "goHomeBtn"
